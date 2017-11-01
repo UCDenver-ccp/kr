@@ -16,16 +16,16 @@ update: see the note on [Sesame Versions]
 
 The primary api functions you're likely to use come from the kr-core apis:
 ```clj
-(use 'edu.ucdenver.ccp.kr.kb)
-(use 'edu.ucdenver.ccp.kr.rdf)
-(use 'edu.ucdenver.ccp.kr.sparql)
+(use 'kr.core.kb)
+(use 'kr.core.rdf)
+(use 'kr.core.sparql)
 ```
 
 To actually get a KB instance to work with you'll need to make sure the implementation-specific code is loaded:
 ```clj
-(require 'edu.ucdenver.ccp.kr.sesame.kb)
+(require 'kr.sesame.kb)
 ;; OR
-(require 'edu.ucdenver.ccp.kr.jena.kb)
+(require 'kr.jena.kb)
 ```
 
 a kb instance can then be acquired with the kb function, for example:
@@ -101,7 +101,7 @@ the core dependency is kr-core:
 </dependency>
 ```
 
-but the core dependency is unnecessary if you are brining in either the sesame or jena implementations:
+but the core dependency is unnecessary if you are bringing in either the sesame or jena implementations:
 ```xml
 <dependency>
   <groupId>edu.ucdenver.ccp</groupId>
